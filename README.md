@@ -36,17 +36,17 @@ conda activate rhofold
 python setup.py install
 ```
 
-### Download sequence databases for MSA construction
+### Download sequence databases for MSA construction (Can be done later)
 
 ```
-./database/bin/builddb.sh    # Download RNAcentral and nt
+./database/bin/builddb.sh    # Download RNAcentral, Rfam, and nt
 ```
 
 ### Download pretrained model
 
 ```
 cd ./pretrained
-wget
+wget https://proj.cse.cuhk.edu.hk/aihlab/rhofold/api/download?filename=rhofold_pretrained.pt -O rhofold_pretrained.pt
 cd ../
 ```
 
@@ -84,8 +84,10 @@ python inference.py
 An example
 
 ```commandline
-python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/model_20221010_params.pt
+python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
+
+## Online Server (In development)
 
 
 ## Structure refinement
