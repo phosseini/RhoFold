@@ -10,7 +10,7 @@ This is the opensource code for RhoFold.
 ***10/10/2022***
 
 Initial commits:
-1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided.
+1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided. The model file can be downloaded and placed in the `./pretrained` folder
 
 ## Installation <a name="Setup_Environment"></a>
 
@@ -21,7 +21,7 @@ First, download the repository and create the environment.
 ```
 git clone https://github.com/RFOLD/RhoFold.git 
 cd ./rhofold
-conda env create -f ./envs/environment_linux.yml
+conda env create -f ./envs/environment_linux.yaml
 ```
 
 ### MacOS Users
@@ -79,7 +79,7 @@ python inference.py
 An example
 
 ```commandline
-python inference.py --input_fas ./example/input/3meiA/3meiA.fasta --input_a3m ./example/input/3meiA/3meiA.a3m --output_dir ./example/output/3meiA/ --ckpt ./pretrained/model_20221010_params.pt
+python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/model_20221010_params.pt
 ```
 
 ## Structure refinement
