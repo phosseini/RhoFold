@@ -1,4 +1,3 @@
-
 # RhoFold: Fast and Accurate RNA 3D Structure Prediction with Deep Learning
 
 ![header](header.png)
@@ -10,7 +9,7 @@ This is the opensource code for RhoFold.
 ***10/10/2022***
 
 Initial commits:
-1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided. The model file can be downloaded and placed in the `./pretrained` folder
+1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided.
 
 ## Installation <a name="Setup_Environment"></a>
 
@@ -20,14 +19,14 @@ First, download the repository and create the environment.
 ### Linux Users
 ```
 git clone https://github.com/RFOLD/RhoFold.git 
-cd ./rhofold
-conda env create -f ./envs/environment_linux.yaml
+cd ./RhoFold
+conda env create -f ./envs/environment_linux.yml
 ```
 
 ### MacOS Users
 ```
-git clone https://github.com/RFOLD/RhoFold.git
-cd ./rhofold
+git clone https://github.com/RFOLD/RhoFold.git 
+cd ./RhoFold
 conda env create -f ./envs/environment_macos.yml 
 ```
 
@@ -37,12 +36,18 @@ conda activate rhofold
 python setup.py install
 ```
 
-[//]: # (As an additional input, along with the sequence itself, we use the MSA constructed by Infernal and rMSA in order to capture the information regarding co-evolution of the sequence.)
-
-### Download sequence databases for Multiple Sequence Alignment (MSA) construction
+### Download sequence databases for MSA construction
 
 ```
 ./database/bin/builddb.sh    # Download RNAcentral and nt
+```
+
+### Download pretrained model
+
+```
+cd ./pretrained
+wget
+cd ../
 ```
 
 ## Running <a name="Usage"></a>
@@ -61,7 +66,7 @@ python inference.py
                         Distogram prediction is saved in .npz format.
                         Secondary structure prediction is save in .ct format.     
   --device DEVICE       
-                        Default None. If GPUs are available, the prediction will automatically run on the GPU
+                        Default cpu. If GPUs are available, you can set --device cuda:<GPU_index> for faster prediction.
   --ckpt CKPT           
                         Path to the pretrained model. Default ./pretrained/model_20221010_params.pt
   --relax_steps RELAX_STEPS
@@ -81,6 +86,7 @@ An example
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/model_20221010_params.pt
 ```
+
 
 ## Structure refinement
 
@@ -102,6 +108,9 @@ As a preventative measure to resolve any remaining structural clashes and violat
   year={2022}
 }
 ```
+
+
+
 
 
 

@@ -113,7 +113,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--device", help="Default None. If GPUs are available, the prediction will automatically run on the GPU", default=None)
+    parser.add_argument("--device", help="Default cpu. If GPUs are available, you can set --device cuda:<GPU_index> for faster prediction.", default='cpu')
     parser.add_argument("--ckpt", help="Path to the pretrained model, default ./pretrained/model.pt", default='./pretrained/model.pt')
     parser.add_argument("--input_fas", help="Path to the input fasta file. Valid nucleic acids in RNA sequence: A, U, G, C", required=True)
     parser.add_argument("--input_a3m", help="Path to the input msa file. Default None."
