@@ -36,10 +36,10 @@ conda activate rhofold
 python setup.py install
 ```
 
-### Download sequence databases for MSA construction (Can be done later)
+### Download sequence databases for MSA construction (Can be done later) - Only for Linux users
 
 ```
-./database/bin/builddb.sh    # Download RNAcentral, Rfam, and nt
+./database/bin/builddb.sh    # Download RNAcentral, Rfam, and nt. Total: ~ 900 GB 
 ```
 
 ### Download pretrained model
@@ -50,7 +50,7 @@ wget https://proj.cse.cuhk.edu.hk/aihlab/rhofold/api/download?filename=rhofold_p
 cd ../
 ```
 
-## Running <a name="Usage"></a>
+## Running RhoFold <a name="Usage"></a>
 
 ```commandline
 python inference.py
@@ -81,14 +81,47 @@ python inference.py
 
 ```
 
-An example
+### Examples
+
+Below are examples on how to use RhoFold in different scenarios.
+
+#### Folding with given MSA
 
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
 
-## Online Server (In development)
+#### Folding using single sequence only (input_fas)
 
+```commandline
+python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_pred True --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
+```
+
+### RhoFold output
+
+The outputs will be saved in the directory provided via the `--output_dir` flag of `inference.py`.
+The outputs include the unrelaxed structures, relaxed structures, prediction metadata, and running log.
+The `--output_dir` directory will have the following structure:
+
+```
+<--output_dir>/
+    results.npz
+    ss.ct
+    unrelaxed_model.pdb
+    relaxed_{relax_steps}_model.pdb
+    log.txt
+```
+
+The contents of each output file are as follows:
+
+*   `results.npz` – A `.npz` file containing the distogram prediction of RhoFold in NumPy arrays.
+*   `ss.ct` – A .ct format text file containing the predicted secondary structure.
+*   `unrelaxed_model.pdb` – A PDB format file containing the predicted structure from deep learning.
+*   `relaxed_{relax_steps}_model.pdb` – A PDB format file containing the amber relaxed structure from unrelaxed_model.pdb.
+*   `log.txt` – A txt file containing the running log.
+
+
+## Online Server (In development)
 
 ## Structure refinement
 
@@ -110,7 +143,6 @@ As a preventative measure to resolve any remaining structural clashes and violat
   year={2022}
 }
 ```
-
 
 
 
