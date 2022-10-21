@@ -36,12 +36,6 @@ conda activate rhofold
 python setup.py install
 ```
 
-### Download sequence databases for MSA construction (Can be done later) - Only for Linux users
-
-```
-./database/bin/builddb.sh    # Download RNAcentral, Rfam, and nt. Total: ~ 900 GB 
-```
-
 ### Download pretrained model
 
 ```
@@ -85,17 +79,32 @@ python inference.py
 
 Below are examples on how to use RhoFold in different scenarios.
 
-#### Folding with given MSA
+#### Folding with sequence and given MSA as input
 
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./example/input/3owzA/3owzA.a3m --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
 
-#### Folding using single sequence only (input_fas)
+#### Folding with single sequence as input
+1.Sequence standalone
 
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_pred True --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
+2.With our constructed MSA (**full version of RhoFold**, under construction, only for Linux users)
+
+To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) total of almost 900GB need to be downloaded
+```
+./database/bin/builddb.sh
+```
+Then you can run the following command lines:
+```
+Not available right now!
+```
+
+
+
+
 
 ### RhoFold output
 
