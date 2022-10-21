@@ -93,7 +93,7 @@ python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_p
 ```
 2.With our constructed MSA (**full version of RhoFold**, under construction, only for Linux users)
 
-To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt. Total: ~ 900 GB) totaling about 900GB need to be downloaded
+To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) totaling about 900GB need to be downloaded
 ```
 ./database/bin/builddb.sh
 ```
