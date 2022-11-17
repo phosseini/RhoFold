@@ -4,19 +4,46 @@
 
 This is the opensource code for RhoFold.
 
-## Updates
+<details><summary>Citation</summary>
+
+```bibtex
+@article{shen2022e2efold,
+  title={E2Efold-3D: End-to-End Deep Learning Method for accurate de novo RNA 3D Structure Prediction},
+  author={Shen, Tao and Hu, Zhihang and Peng, Zhangzhi and Chen, Jiayang and Xiong, Peng and Hong, Liang and Zheng, Liangzhen and Wang, Yixuan and King, Irwin and Wang, Sheng and others},
+  journal={arXiv preprint arXiv:2207.01586},
+  year={2022}
+}
+```
+</details>
+
+<details><summary>Table of contents</summary>
+  
+- [Recent Updates](#New_Updates)
+- [Installation](#Installation)
+  - [For Linux Users](#Installation_Linux)
+  - [Download Pretrained Model](#Pretrained_Model)
+- [Usage](#usage)
+  - [Examples](#Examples)
+  - [RhoFold outputs](#RhoFold_outputs)
+- [Online Server](#Online_Server)
+  - [Quick Start](#Quick_Start)
+- [Citations](#citations)
+- [License](#license)
+</details>
+
+## Updates <a name="New_Updates"></a>
 
 ***10/10/2022***
 
 Initial commits:
 1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided.
 
-## Installation <a name="Setup_Environment"></a>
+## Installation <a name="Installation"></a>
 
 Create Environment with Conda
 First, download the repository and create the environment.
 
-### Linux Users
+### Linux Users <a name="Installation_Linux"></a>
 (MacOS is currently not supported)
 ```
 git clone https://github.com/RFOLD/RhoFold.git 
@@ -29,7 +56,7 @@ conda activate rhofold
 python setup.py install
 ```
 
-### Download pretrained model
+### Download pretrained model <a name="Pretrained_Model"></a>
 
 ```
 cd ./pretrained
@@ -68,7 +95,7 @@ python inference.py
 
 ```
 
-### Examples
+### Examples <a name="Examples"></a>
 
 Below are examples on how to use RhoFold in different scenarios.
 
@@ -84,7 +111,7 @@ python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_pred True --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
-2.With our constructed MSA (**full version of RhoFold**, under construction, only for Linux users)
+2.With our constructed MSA (**Full version of RhoFold**)
 
 To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) totaling about 900GB need to be downloaded
 ```
@@ -92,11 +119,11 @@ To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) tot
 ```
 Then you can run the following command lines:
 ```
-Not available right now!
+python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
 
 
-### RhoFold output
+### RhoFold outputs <a name="RhoFold_Outputs"></a>
 
 The outputs will be saved in the directory provided via the `--output_dir` flag of `inference.py`.
 The outputs include the unrelaxed structures, relaxed structures, prediction metadata, and running log.
@@ -120,7 +147,7 @@ The contents of each output file are as follows:
 *   `log.txt` – A txt file containing the running log.
 
 
-## Online Server
+## Online Server <a name="Online_Server"></a>
 No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
 
 [//]: # (AlphaFold's, OpenFold's and, by extension, xTrimoMultimer source code is licensed under the permissive Apache Licence, Version 2.0.)
@@ -136,7 +163,10 @@ No need to create the environment locally, you can also access RhoFold easily th
 }
 ```
 
+## License <a name="license"></a>
 
+This source code is licensed under the Apache license found in the `LICENSE` file
+in the root directory of this source tree.
 
 
 
