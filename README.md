@@ -17,13 +17,12 @@ Create Environment with Conda
 First, download the repository and create the environment.
 
 ### Linux Users
+(MacOS is currently not supported)
 ```
 git clone https://github.com/RFOLD/RhoFold.git 
 cd ./RhoFold
 conda env create -f ./envs/environment_linux.yml
 ```
-MacOS is currently not supported
-
 Then, activate the "rhofold" environment.
 ```
 conda activate rhofold
