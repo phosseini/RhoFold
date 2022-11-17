@@ -120,7 +120,8 @@ The contents of each output file are as follows:
 *   `log.txt` – A txt file containing the running log.
 
 
-## Online Server (In development)
+## Online Server
+No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
 
 ## Structure refinement
 
