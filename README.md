@@ -20,7 +20,7 @@ This is the opensource code for RhoFold.
   
 - [Recent Updates](#New_Updates)
 - [Online Server](#Online_Server) 
-- [Installation](#Installation)
+- [Local Environment Setup](#Local_Environment_Setup)
   - [For Linux Users](#Installation_Linux)
   - [Download Pre-trained Model](#Pretrained_Model)
 - [Usage](#usage)
@@ -42,7 +42,7 @@ Initial commits:
 No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
 
 
-## Installation <a name="Installation"></a>
+## Local Environment Setup <a name="Local_Environment_Setup"></a>
 
 Create Environment with Conda
 First, download the repository and create the environment.
