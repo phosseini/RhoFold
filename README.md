@@ -70,7 +70,7 @@ cd ../
 
 ## Usage <a name="Usage"></a>
 
-## Input Arguments <a name="Arguments"></a>
+### Input Arguments <a name="Arguments"></a>
 
 ```commandline
 python inference.py
