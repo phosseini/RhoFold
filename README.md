@@ -123,14 +123,6 @@ The contents of each output file are as follows:
 ## Online Server
 No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
 
-## Structure refinement
-
-As a preventative measure to resolve any remaining structural clashes and violations, we can relax our model predictions through a restrained energy minimization procedure. We provide several options for structural refinement as follows:
-
-1. Amber 
-2. [QRNAS](https://github.com/sunandanmukherjee/QRNAS)
-3. [BRiQ](https://github.com/Jian-Zhan/RNA-BRiQ)
-
 [//]: # (AlphaFold's, OpenFold's and, by extension, xTrimoMultimer source code is licensed under the permissive Apache Licence, Version 2.0.)
 
 ## Citations <a name="Citations"></a>
