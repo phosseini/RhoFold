@@ -22,13 +22,7 @@ git clone https://github.com/RFOLD/RhoFold.git
 cd ./RhoFold
 conda env create -f ./envs/environment_linux.yml
 ```
-
-### MacOS Users
-```
-git clone https://github.com/RFOLD/RhoFold.git 
-cd ./RhoFold
-conda env create -f ./envs/environment_macos.yml 
-```
+MacOS is currently not supported
 
 Then, activate the "rhofold" environment.
 ```
