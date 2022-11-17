@@ -24,8 +24,9 @@ This is the opensource code for RhoFold.
   - [For Linux Users](#Installation_Linux)
   - [Download Pre-trained Model](#Pretrained_Model)
 - [Usage](#usage)
-  - [Examples](#Examples)
-  - [RhoFold outputs](#RhoFold_outputs) 
+  - [Input Arguments](#Arguments)
+  - [Output Files](#RhoFold_outputs) 
+  - [Examples](#Examples)  
 - [Citations](#citations)
 - [License](#license)
 </details>
@@ -67,7 +68,9 @@ wget https://proj.cse.cuhk.edu.hk/aihlab/rhofold/api/download?filename=rhofold_p
 cd ../
 ```
 
-## Running RhoFold <a name="Usage"></a>
+## Usage <a name="Usage"></a>
+
+## Input Arguments <a name="Arguments"></a>
 
 ```commandline
 python inference.py
@@ -98,6 +101,30 @@ python inference.py
 
 ```
 
+### Output Files <a name="RhoFold_Outputs"></a>
+
+The outputs will be saved in the directory provided via the `--output_dir` flag of `inference.py`.
+The outputs include the unrelaxed structures, relaxed structures, prediction metadata, and running log.
+The `--output_dir` directory will have the following structure:
+
+```
+<--output_dir>/
+    results.npz
+    ss.ct
+    unrelaxed_model.pdb
+    relaxed_{relax_steps}_model.pdb
+    log.txt
+```
+
+The contents of each output file are as follows:
+
+*   `results.npz` – A `.npz` file containing the distogram prediction of RhoFold in NumPy arrays.
+*   `ss.ct` – A .ct format text file containing the predicted secondary structure.
+*   `unrelaxed_model.pdb` – A PDB format file containing the predicted structure from deep learning.
+*   `relaxed_{relax_steps}_model.pdb` – A PDB format file containing the amber relaxed structure from unrelaxed_model.pdb.
+*   `log.txt` – A txt file containing the running log.
+
+
 ### Examples <a name="Examples"></a>
 
 Below are examples on how to use RhoFold in different scenarios.
@@ -124,31 +151,6 @@ Then you can run the following command lines:
 ```
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
-
-
-### RhoFold outputs <a name="RhoFold_Outputs"></a>
-
-The outputs will be saved in the directory provided via the `--output_dir` flag of `inference.py`.
-The outputs include the unrelaxed structures, relaxed structures, prediction metadata, and running log.
-The `--output_dir` directory will have the following structure:
-
-```
-<--output_dir>/
-    results.npz
-    ss.ct
-    unrelaxed_model.pdb
-    relaxed_{relax_steps}_model.pdb
-    log.txt
-```
-
-The contents of each output file are as follows:
-
-*   `results.npz` – A `.npz` file containing the distogram prediction of RhoFold in NumPy arrays.
-*   `ss.ct` – A .ct format text file containing the predicted secondary structure.
-*   `unrelaxed_model.pdb` – A PDB format file containing the predicted structure from deep learning.
-*   `relaxed_{relax_steps}_model.pdb` – A PDB format file containing the amber relaxed structure from unrelaxed_model.pdb.
-*   `log.txt` – A txt file containing the running log.
-
 
 
 
