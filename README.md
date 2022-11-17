@@ -19,14 +19,13 @@ This is the opensource code for RhoFold.
 <details><summary>Table of contents</summary>
   
 - [Recent Updates](#New_Updates)
+- [Online Server](#Online_Server) 
 - [Installation](#Installation)
   - [For Linux Users](#Installation_Linux)
-  - [Download Pretrained Model](#Pretrained_Model)
+  - [Download Pre-trained Model](#Pretrained_Model)
 - [Usage](#usage)
   - [Examples](#Examples)
-  - [RhoFold outputs](#RhoFold_outputs)
-- [Online Server](#Online_Server)
-  - [Quick Start](#Quick_Start)
+  - [RhoFold outputs](#RhoFold_outputs) 
 - [Citations](#citations)
 - [License](#license)
 </details>
@@ -37,6 +36,10 @@ This is the opensource code for RhoFold.
 
 Initial commits:
 1.  [Pretrained model](https://drive.google.com/file/d/1To2bjbhQLFx1k8hBOW5q1JFq6ut27XEv/view?usp=sharing) is provided.
+
+## Online Server <a name="Online_Server"></a>
+No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
+
 
 ## Installation <a name="Installation"></a>
 
@@ -56,7 +59,7 @@ conda activate rhofold
 python setup.py install
 ```
 
-### Download pretrained model <a name="Pretrained_Model"></a>
+### Download pre-trained model <a name="Pretrained_Model"></a>
 
 ```
 cd ./pretrained
@@ -147,8 +150,7 @@ The contents of each output file are as follows:
 *   `log.txt` – A txt file containing the running log.
 
 
-## Online Server <a name="Online_Server"></a>
-No need to create the environment locally, you can also access RhoFold easily through its online server: https://proj.cse.cuhk.edu.hk/aihlab/rhofold/
+
 
 [//]: # (AlphaFold's, OpenFold's and, by extension, xTrimoMultimer source code is licensed under the permissive Apache Licence, Version 2.0.)
 
