@@ -27,6 +27,7 @@ This is the opensource code for RhoFold.
   - [Input Arguments](#Arguments)
   - [Output Files](#RhoFold_outputs) 
   - [Examples](#Examples)  
+- [Training Data](#Training_Data)
 - [Citations](#citations)
 - [License](#license)
 </details>
@@ -155,7 +156,7 @@ python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --output_dir .
 ```
 
 ## Training Data <a name="Training_Data"></a>
-You can access training data (13.86G) from the [google drive link](https://drive.google.com/file/d/1qcETN6QQES7cwdfsTPnnlsa77brmyBrN/view?usp=sharing). The file includes off-the-shelf MSAs which you can use directly.
+You can access training data (13.86G) from the [google drive link](https://drive.google.com/file/d/1qcETN6QQES7cwdfsTPnnlsa77brmyBrN/view?usp=sharing). The file includes the off-the-shelf MSAs of training data, which can be fed into RhoFold directly.
 
 
 [//]: # (AlphaFold's, OpenFold's and, by extension, xTrimoMultimer source code is licensed under the permissive Apache Licence, Version 2.0.)
