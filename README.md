@@ -143,7 +143,9 @@ python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_p
 ```
 2.With our constructed MSA (**Full version of RhoFold**)
 
-To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) totaling about 900GB need to be downloaded
+To support MSA construction, 3 sequence databases (RNAcentral, Rfam, and nt) totaling about 900GB need to be downloaded. 
+
+**Warning: you should ensure that there are adequate spaces for saving the data! Otherwise you can directly utilize our [online server](#Online_Server), or download our [off-the-shelf MSAs](#Training_Data) instead of regenerating them.**
 ```
 ./database/bin/builddb.sh
 ```
@@ -152,6 +154,8 @@ Then you can run the following command lines:
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
 ```
 
+## Training Data <a name="Training_Data"></a>
+You can access training data (13.86G) from the [google drive link](https://drive.google.com/file/d/1qcETN6QQES7cwdfsTPnnlsa77brmyBrN/view?usp=sharing). The file includes off-the-shelf MSAs which you can use directly.
 
 
 [//]: # (AlphaFold's, OpenFold's and, by extension, xTrimoMultimer source code is licensed under the permissive Apache Licence, Version 2.0.)
