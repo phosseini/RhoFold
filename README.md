@@ -77,7 +77,7 @@ cd ../
 python inference.py
 
   --input_fas INPUT_FAS
-                        Path to the input fasta file. Valid nucleic acids in RNA sequence: A, U, G, C.
+                        Path to the input fasta file. Valid nucleic acids in RNA sequence: A, U, G, C. Input of sequence standalone is in testing. It's not as accurate as inputs of sequences combined with MSA. The former is only for the user to generate a quick reference structure.
   --input_a3m INPUT_A3M
                         Path to the input msa file, default None.
                         If --input_a3m is not given (set to None), MSA will be generated automatically.
@@ -137,7 +137,8 @@ python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --input_a3m ./
 ```
 
 #### Folding with single sequence as input
-1.Sequence standalone
+1.Sequence standalone  
+This function is in testing. It's not as accurate as the MSA version. It's only for the user to generate a quick reference structure.
 
 ```commandline
 python inference.py --input_fas ./example/input/3owzA/3owzA.fasta --single_seq_pred True --output_dir ./example/output/3owzA/ --ckpt ./pretrained/rhofold_pretrained.pt
