@@ -53,7 +53,7 @@ First, download the repository and create the environment.
 ```
 git clone https://github.com/RFOLD/RhoFold.git 
 cd ./RhoFold
-conda env create -f ./envs/environment_linux.yml
+conda env create -f ./envs/environment_linux.yaml
 ```
 Then, activate the "rhofold" environment.
 ```
